@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+  margin: 4px;
+  padding: 4;
+}
+
+html {
+  height: 100%;
+}
+body {
+  font-family: "Public Sans", sans-serif;
+  font-size: 1.2rem;
+  min-height: 100%;
+}
+.grid-container > * {
+  box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  padding: 5px;
+  text-align: center;
+}
+.header {
+  grid-area: header;
+  background-color: #85aedd;
+}
+.Inicio {
+  grid-area: Inicio;
+  background-color: #c999af;
+}
+.sidebar {
+  grid-area: sidebar;
+  background-color: #f563a7;
+}
+.main {
+  grid-area: main;
+  background-color: #d4f1ff;
+}
+.footer {
+  grid-area: footer;
+  background-color: #8c96a0;
+}
+.grid-container {
+  display: grid;
+  gap: 10px;
+  grid-template:
+    "header"  220px
+    "Inicio"  70px
+    "main"     auto
+    "sidebar" 315px
+    "footer"  100px;
+}
+
+ol li{
+	color:black;
+	font-family:clarendon;
+}
+h1{
+	font-family:georgian;
+	color:green;
+}
+p{
+	font-weight:bold;
+	color:#660000;
+}
+nav ul li{
+	float:left;
+    list-style:none;
+    font-family:times new roman;
+    font-weight:bold;	
+}
+a{
+	text-decoration:none; 
+}
+ol li {
+	text-align:left;
+}
+nav ul li a:hover{
+	color: white;
+}
+
+ @media(min-width:600px){
+  .grid-container {
+    /* grid-template-columns: 200px auto;
+    grid-template-rows: 100px 50px auto 100px;
+    grid-template-areas: 
+    "header  header"
+    "Inicio  Inicio"
+    "sidebar main"
+    "footer  footer"; */
+
+    grid-template:
+      "header  header" 100px
+      "Inicio Inicio" 150px
+      "sidebar main"   auto
+      "footer  footer" 100px /
+      200px    auto;
+  }
+}
+@media(min-width: 900px){
+  .grid-container {
+    grid-template:
+      "header  header header"  100px
+      "Inicio  main   sidebar" auto
+      "footer  footer footer"  100px /
+      200px    auto   200px;
+  }
+}
